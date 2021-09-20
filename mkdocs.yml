@@ -1,0 +1,71 @@
+site_name: SMA Documentation
+site_url: https://sma-doc.pages.dev
+repo_url: hhttps://github.com/inteligenciaambientalsma/ComplaintModelSMA
+
+nav:
+    - Project Overview: index.md
+    - Quickstart: getting-started.md
+    - Project Setup: project-setup.md
+
+    - Data Preparation:
+      - Preparing the Data: set-up/preparing-the-data.md
+      - Feature Engineering: set-up/feature-engineering.md
+      - Setting Up MLflow: set-up/setting-up-mlflow.md
+      
+    - Relevance Model:
+      - Relevance Model Walkthrough: relevance-model/relevance-model-walkthrough.md
+      - Relevance Model Prediction Script: relevance-model/relevance-prediction.md
+      - Relevance Model Development Process: relevance-model/relevance-model-report.md
+    
+    - Sanctions Model:
+      - Sanctions Gravity Model Walkthrough: sanctions-gravity-model/sanctions-gravity-model-walkthrough.md
+      - Sanctions Gravity Model Prediction Script: sanctions-gravity-model/sanctions-gravity-prediction.md
+      - Sanctions Gravity Model Development Process: sanctions-gravity-model/sanctions-gravity-model-report.md
+    
+    - Model Deployment:
+      - Deployment Environment Setup: model-deployment/deployment-environment-setup.md
+      - Deploy A Model: model-deployment/deploying-a-model.md
+
+    - API Reference:
+      - Train Model: api-docs/train_model.md
+      - Rake Extraction: api-docs/rake_extraction.md
+      - Topic Modelling: api-docs/topic_modelling.md
+      - Feature Selection: api-docs/feature_selection.md
+      - Model Metrics: api-docs/model_metrics.md
+      - TFIDF Transform: api-docs/tfidf_transform.md
+    
+    - About:
+      - About the Team: about-the-project/about-the-team.md
+      - What is DSSGx: about-the-project/what-is-dssgx.md
+      - Resources and Attributions: resources.md
+    
+theme:
+  name: "gitbook"
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: True
+  - pymdownx.highlight:
+        use_pygments: true
+
+plugins:
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          setup_commands:
+            - import sys
+            - import os
+            - sys.path.append('./sma/')
+            - sys.path.append('./src/models')
+            - sys.path.append('./src/helpers')
+            - sys.path.append('./src/data')
+          rendering:
+            show_source: True
+extra_css:
+  - css/extra.css
+  - css/highlightjs.min.css
+extra_javascript:
+  - js/highlightjs.min.js
+  - js/highlightjs.init.js

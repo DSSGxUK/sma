@@ -1,0 +1,2 @@
+uname:0,ExperimentId,Root Mean Square Error,r_square,max error,mean absolute_ error,5 most important features,Features,Algorithm
+,0.0,"(839.28,)",0.39,"(8833.56,)","(298.86,)","[(0.3170832908305881, 'index'), (0.24100196242042513, 'facility_num_sanctions'), (0.18838262823450147, 'num_words'), (0.12453285645192236, 'facility_num_inspections'), (0.08377977654029703, 'month')]","['ComplaintType', 'num_words', 'FacilityRegion', 'FacilityEconomicSubSector', 'sanction_inspection_ratio', 'month', 'facility_num_inspections', 'facility_num_sanctions']",Random Forest Regressor

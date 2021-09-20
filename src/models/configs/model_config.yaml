@@ -1,0 +1,27 @@
+data:
+  loc: '/files/data/data/processed/db'
+  file: 'complaints_registry_rel.csv'
+  train_size: 0.7
+features:
+  column_names: ['ComplaintId', 'ComplaintDetail', 'EndType']
+  feature_col: 'ComplaintDetail'
+  target_col: 'Relevancy'
+meta:
+  raw: 'complaints_registry.csv'
+  train: 'complaints_registry_rel.csv'
+parameters:
+  svm_classifier:
+    alpha: 0.0002
+    l1_ratio: 1.0
+  logistic_regression:
+    C: [0.1,1,5,10,50,100,500,1000]
+    max_iter: [100,200,500,800,1000,2000,3000,5000,10000]
+  random_forest:
+    n_estimators: 10
+    max_depth: 16
+    max_features: 'auto'
+  naive_bayes:
+    alpha: 1.0
+    fit_prior: True
+
+
